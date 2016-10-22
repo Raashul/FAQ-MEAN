@@ -1,0 +1,30 @@
+/*
+Base elements
+*/
+
+
+body{
+	margin-top: 70px;
+}
+
+
+#questions{
+    height: 60px;
+    widows: 75%;
+}
+
+
+
+.signupForm{
+
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+   margin-top: 100px;
+
+}
+#signupButton{
+  width: 100px;
+  height: 40px;
+  text-align: center;
+}

@@ -1,0 +1,43 @@
+ <div class="container">
+    
+        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+            
+                <div class="form-group">
+                    
+                    <input type="text" class="form-control" id="questions" ng-model="question" placeholder="Ask your question">
+                    <button type="submit" class="btn btn-primary" ng-click="postQuestion()">Submit</button>
+                </div>
+                
+                
+                <div ng-repeat='user in users'>
+                   <div class="row">
+                      <div class="col-md-3">
+                        <h2>{{users.username}}</h2>
+                        <p>{{users.date | date: 'MM/dd/yyy hh:mn}}</p>
+                       </div>
+                      <div class="col-md-7">
+                       <p class="lead">{{users.questions}}</p>
+                       </div>
+                    </div>
+                </div>
+            
+     
+            </div>
+            
+              <div class="col-xs-6 col-md-4">
+            
+              Right side information goes here
+            
+          </div>
+                
+            
+            </div>
+     
+     
+        
+        </div>
+
+    
+    </div>
