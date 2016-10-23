@@ -9,8 +9,6 @@ module.exports = mongoose.model('User', {
 
 	password: String,
     
-    questions: String,
-    
-    answers: String
+ 
 
 });

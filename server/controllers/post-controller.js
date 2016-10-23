@@ -1,57 +1,38 @@
 var mongoose 	= require('mongoose');
-var User		= require('../datasets/users');
-
+var Post		= require('../datasets/posts');
 
 module.exports.postQuestion = function(req,res){
-    var post = req.body;
+  
+    console.log('req.body');
+  
     
-//    User.find({}, function(err, users){
-//        if(err){
-//            console.log(err);
-//        }else{
-//            res.json(users);
-//        }
-//    })
-//    
-    User.findOne({username: post.username}, function (err, user) {
-    if(err){
-        console.log(err);
-    }else{
-       
-        user.update(
-             {questions:post.postQuestion}, 
-               function(err, post){  
-                   if(err){
-                       console.log(err);
-                   }else{
-                        user.save(function (err) {
-                            if(err) {
-                                console.error('ERROR!');
-                            }else{
-                                res.json(user);
-                                console.log('success');
-                            }
-                        });
-                    }
-               });
-   
-        
-    }
+    var post = new Post(req.body);
+    
+    post.save();
+    
+    Post.find({})
+        .sort({date:-1}).exec(function(err, allPosts){
+        if(err){
+            console.log(err);
+        }else{
+            res.json(allPosts);
+        }
+    })
 
-
-});
     
 };
 
 
 module.exports.getQuestion = function(req, res){
-    User.find({}
-             .sort({date: -1}))
-            .exec(function(err, posts){
+    Post.find({})
+        .sort({date:-1}).exec(function(err, allPosts){
         if(err){
-            res.error(err);
+            console.log(err);
         }else{
-            res.json(posts);
+            console.log('allposts');
+           console.log(allPosts);
+            res.json(allPosts);
         }
     })
-}
+
+};

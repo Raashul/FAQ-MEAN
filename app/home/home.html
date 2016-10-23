@@ -10,15 +10,17 @@
                     <button type="submit" class="btn btn-primary" ng-click="postQuestion()">Submit</button>
                 </div>
                 
-                
+                 <div class="alert alert-success" ng-if="incommingPost.length > 0">
+                         <a ng-click="setNewPost()" >There are {{difference}} new posts</a>
+                </div>
                 <div ng-repeat='user in users'>
                    <div class="row">
+                       
                       <div class="col-md-3">
-                        <h2>{{users.username}}</h2>
-                        <p>{{users.date | date: 'MM/dd/yyy hh:mn}}</p>
+                        <p><strong>{{user.username}}</strong> {{user.date | date : 'MM/dd/yy hh:m'}}</p>
                        </div>
                       <div class="col-md-7">
-                       <p class="lead">{{users.questions}}</p>
+                       <p class="lead">{{user.questions}}</p>
                        </div>
                     </div>
                 </div>

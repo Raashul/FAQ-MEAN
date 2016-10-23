@@ -1,12 +1,12 @@
 var mongoose 		= require('mongoose');
 
-module.exports = mongoose.model('User', {
+module.exports = mongoose.model('Post', {
 
 	email: String,
     
     username: String,
 
-	password: String,
+	userId: String,
     
    questions: String,
     
