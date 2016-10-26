@@ -3,6 +3,8 @@
 		.config(function($stateProvider, $urlRouterProvider){
 
         $urlRouterProvider.otherwise('/');
+    
+      
 
 			$stateProvider
 				.state('signUp',{
@@ -13,10 +15,25 @@
 				})
 
 				
-                .state('main',{
-                    url: '/',
-                    templateUrl: 'app/home/home.html',
-                    controller: 'HomeController'
-            })
+        .state('main',{
+            url: '/',
+            templateUrl: 'app/home/home.html',
+            controller: 'HomeController'
+        })
+      
+        .state('question-answer', {
+        url: '/post?id',
+        templateUrl: 'app/qa/qa.html',
+        controller:'QaController'
+
+      });
+      
+      
+        
+            
+            
+     
+      
+      
 		})
 }());

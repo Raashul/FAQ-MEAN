@@ -10,6 +10,8 @@ var profileController = require('./server/controllers/profile-controller');
 
 var postController = require('./server/controllers/post-controller');
 
+var qaController = require('./server/controllers/qa-controller');
+
 
 var app 					= express();
 
@@ -34,6 +36,11 @@ app.post('/api/user/login', authenticationController.login);
 app.post('/api/home/post', postController.postQuestion);
 app.get('/api/home/get', postController.getQuestion);
 
+app.get('/api/getQuestion', postController.Question);
+
+app.post('/api/post/get', qaController.getPost);
+
+app.post('/api/answer/post', qaController.postAnswer)
 
 app.listen('3000', function(){
 	console.log('Listening in port 3000');

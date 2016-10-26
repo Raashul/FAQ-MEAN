@@ -3,10 +3,8 @@ var Post		= require('../datasets/posts');
 
 module.exports.postQuestion = function(req,res){
   
-    console.log('req.body');
-  
-    
     var post = new Post(req.body);
+    
     
     post.save();
     
@@ -24,15 +22,21 @@ module.exports.postQuestion = function(req,res){
 
 
 module.exports.getQuestion = function(req, res){
+ 
     Post.find({})
         .sort({date:-1}).exec(function(err, allPosts){
         if(err){
             console.log(err);
         }else{
-            console.log('allposts');
-           console.log(allPosts);
+            
             res.json(allPosts);
         }
     })
 
 };
+
+
+module.exports.Question = function(req, res){
+ 
+
+}

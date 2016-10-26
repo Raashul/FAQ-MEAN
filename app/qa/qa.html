@@ -1,0 +1,41 @@
+<div class="container">
+
+  
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <p class="lead"> <strong>{{post.username}} </strong> asked {{post.questions}} </p> 
+     
+     </div>
+  </div>
+	
+	<hr>
+  
+  
+   <div class="row textarea" >
+    <div class="col-md-6 col-md-offset-3">
+      <div class="form-group">
+		<label for="comment">Answer:</label>
+		<textarea class="form-control" rows="5" id="answer"placeholder="Answer the question here" ng-model="answer"></textarea>
+		  
+		<button type="button" class="btn btn-primary" ng-click='postAnswer()'>Answer this question</button>
+	  </div>
+     </div>
+  </div>
+	
+	
+	<hr>
+	
+	<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <p class="lead"> <strong>{{postReply.username}} </strong> answered {{postReply.answers}} </p> 
+     
+     </div>
+  </div>
+	
+	
+	
+	
+	
+
+
+</div>
