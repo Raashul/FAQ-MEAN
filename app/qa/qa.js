@@ -6,6 +6,9 @@
         id : $location.search().id
         
       }
+	  
+	  $scope.username=localStorage.getItem('username');
+		
       
    $http.post('api/post/get',id).success(function(response){
         console.log(response);
@@ -23,8 +26,8 @@
 	};
 	
 	$http.post('api/answer/post',request).success(function(response){
-	  console.log('success');
-	  console.log(response);
+	  
+		console.log($scope.username);
 	}).error(function(err){
 	  console.log(err);
 	})

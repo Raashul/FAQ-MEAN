@@ -27,6 +27,8 @@
             username: $scope.lusername,
             password: $scope.lpassword
         };
+		
+		localStorage.setItem('username', request.username);
         
         $http.post('/api/user/login', request).success(function(response){
             console.log(response);
