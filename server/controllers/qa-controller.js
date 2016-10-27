@@ -22,24 +22,54 @@ module.exports.getPost = function(req, res){
 
 
 module.exports.postAnswer = function(req, res){
+ 
   
-  console.log('req.body to postanswer is');
-  console.log(req.body);
-  
-  	Post.findOne({_id: req.body.id}, function (err, post) {
-    post.answers = req.body.answer;
-    
+//  	Post.findById({_id: req.body.id}, function (err, post) {
+//	  if(err){
+//		res.send('Answer could not be saved');
+//	  }else{
+//		console.log('found post');
+//	  
+//		}
+//	  
+//	})
+//	
+//	
+//	  
 
-    post.save(function (err) {
-        if(err) {
-            console.error('ERROR!');
-        }else{
-		  res.json(post);
+  Post.findByIdAndUpdate(
+		req.body.id,
+		{$push: {"answers": {answer: req.body.answer, username: 'test'}}},
+		{safe: true, upsert: false, new : true},
+		function(err, updatedPost) {
+		  console.log('success updating');
+
+		  res.json(updatedPost)
 		}
-    });
-	  
-	  
-});
+	);
+
+
+		
+//		Post.update({_id: req.body.id},{
+//				   $push : {
+//					"answers" : answer
+//				   	}, function(err, post){
+//					  if(err){
+//						console.log('error spotted');
+//						console.log(err);
+//					  }else{
+//						console.log('updated');
+//					  	console.log(post.answers);
+//					  	console.log(post);
+//					  	res.json(post);
+//					  }
+//					  
+//					 
+//					}
+//				})
+		
+		
+
   
   
 }

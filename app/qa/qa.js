@@ -27,7 +27,9 @@
 	
 	$http.post('api/answer/post',request).success(function(response){
 	  
-		console.log($scope.username);
+		$scope.updatedPost = response;
+		console.log(response);
+		
 	}).error(function(err){
 	  console.log(err);
 	})

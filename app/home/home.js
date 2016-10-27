@@ -9,6 +9,8 @@
                  if(localStorage['User-Data'] !== undefined){
                     
                      var userData = JSON.parse(localStorage['User-Data']);
+				   
+				 localStorage.setItem('user', userData.username); 
                      
                     var request = {
                          username        : userData.username,

@@ -10,7 +10,12 @@ module.exports = mongoose.model('Post', {
     
    questions: String,
     
-    answers: String,
+    answers: [
+		{
+			username: String,
+			answer	: String
+		}
+	],
     
     date : {type: Date, default: Date.now}
 
