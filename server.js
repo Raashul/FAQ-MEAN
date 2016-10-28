@@ -17,8 +17,16 @@ var app 					= express();
 
 //mongoose.connect('mongodb://localhost/faq');
 
-mongoose.connect("mongodb://<Rashul>:<password12>@ds031257.mlab.com:31257/faq-mean")
+//mongoose.connect("mongodb://<Rashul>:<password12>@ds137207.mlab.com:37207/faq")
 
+
+mongoose.connect(process.env.MONGODB_URI, function(err){
+	if(err){
+		console.error(err);
+	}else{
+		console.log('success');
+	}
+})
 
 app.use(bodyParser.json());
 app.use(multipartMiddleware);
