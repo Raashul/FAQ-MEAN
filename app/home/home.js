@@ -29,7 +29,7 @@
                         console.log(err);
                     })
               }else{
-                  console.log('undefined');
+                  $location.path('/');
 
               }
               
@@ -88,7 +88,7 @@
                    
                 }
                 
-            }, 20000)
+            }, 10000)
             
             $scope.setNewPost = function(){
                 $scope.users = angular.copy($scope.incommingPost);

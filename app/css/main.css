@@ -39,3 +39,27 @@ body{
 .textarea{
 	margin-top: 50px;
 }
+
+#footer {
+  	position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 1em;
+    margin-top: 40px;
+}
+
+#footer p{
+    text-align: center;
+}
+
+
+.m-left{
+    margin-left: 15px;
+	color: black;
+}
+
+.m-left:hover{
+    cursor: pointer;
+    font-size: 40px;
+ }
+
