@@ -3,7 +3,7 @@
 (function(){
 	angular.module('Rashul')
 
-.controller('SignUpController',['$scope', '$state', '$http', function($scope, $state, $http){
+.controller('SignUpController',['$scope', '$state', '$http', "$location", function($scope, $state, $http, $location){
 
     
 	$scope.createUser = function(req,res){
@@ -15,6 +15,7 @@
         
 		$http.post('api/user/signup', request).success(function(response){
             console.log('success');
+			$location.path('/')
 		}).error(function(err){
 			console.log(error);
 		})
@@ -32,8 +33,10 @@
         
         $http.post('/api/user/login', request).success(function(response){
             console.log(response);
+			
             localStorage.setItem('User-Data', JSON.stringify(response));
             $scope.loggedIn = true;
+			$location.path('/')
         }).error(function(err){
             console.log(err);
         });

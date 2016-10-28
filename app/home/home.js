@@ -22,6 +22,8 @@
                     $http.post('api/home/post', request).success(function(response){
                         console.log(response);
                         $scope.users = response;
+						
+						
                        
                     }).error(function(err){
                         console.log(err);
