@@ -15,7 +15,7 @@ var qaController = require('./server/controllers/qa-controller');
 
 var app 					= express();
 
-mongoose.connect('mongodb://localhost/faq');
+//mongoose.connect('mongodb://localhost/faq');
 
 mongoose.connect("mongo ds031257.mlab.com:31257/faq-mean -u <Rashul> -p <password12>")
 
