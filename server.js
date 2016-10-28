@@ -17,7 +17,7 @@ var app 					= express();
 
 //mongoose.connect('mongodb://localhost/faq');
 
-mongoose.connect("mongo ds031257.mlab.com:31257/faq-mean -u <Rashul> -p <password12>")
+mongoose.connect("mongodb://<Rashul>:<password12>@ds031257.mlab.com:31257/faq-mean")
 
 
 app.use(bodyParser.json());
