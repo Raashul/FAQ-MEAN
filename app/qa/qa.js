@@ -20,6 +20,11 @@
       
   $scope.postAnswer = function(req, res){
 	  
+	  
+	  if(localStorage['User-Data'] == undefined){
+		  $location.path('/signup');
+	  }else{
+		    
   	var request = {
 		answer	: $scope.answer,
 		id		: $location.search().id		
@@ -33,6 +38,9 @@
 	}).error(function(err){
 	  console.log(err);
 	})
+	
+	  }
+	
   }    
       
    

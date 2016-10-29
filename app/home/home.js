@@ -29,7 +29,7 @@
                         console.log(err);
                     })
               }else{
-                  $location.path('/');
+                  $location.path('/signup');
 
               }
               

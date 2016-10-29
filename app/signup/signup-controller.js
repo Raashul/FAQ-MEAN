@@ -34,9 +34,11 @@
         $http.post('/api/user/login', request).success(function(response){
             console.log(response);
 			
+			
             localStorage.setItem('User-Data', JSON.stringify(response));
             $scope.loggedIn = true;
-			$location.path('/')
+			$location.path('/');
+			
         }).error(function(err){
             console.log(err);
         });

@@ -15,9 +15,13 @@ var qaController = require('./server/controllers/qa-controller');
 
 var app 					= express();
 
-//mongoose.connect('mongodb://localhost/faq');
 
-//mongoose.connect("mongodb://<Rashul>:<password12>@ds137207.mlab.com:37207/faq")
+//This mongoose connecttion is for localhost
+mongoose.connect('mongodb://localhost/faq');
+
+
+//this mongoose connection is for heroku
+mongoose.connect("mongodb://<Rashul>:<password12>@ds137207.mlab.com:37207/faq")
 
 
 mongoose.connect(process.env.MONGODB_URI, function(err){
