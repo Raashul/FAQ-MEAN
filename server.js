@@ -21,16 +21,16 @@ mongoose.connect('mongodb://localhost/faq');
 
 
 //this mongoose connection is for heroku
-mongoose.connect("mongodb://<Rashul>:<password12>@ds137207.mlab.com:37207/faq")
+//mongoose.connect("mongodb://<Rashul>:<password12>@ds137207.mlab.com:37207/faq")
 
 
-mongoose.connect(process.env.MONGODB_URI, function(err){
-	if(err){
-		console.error(err);
-	}else{
-		console.log('success');
-	}
-})
+// mongoose.connect(process.env.MONGODB_URI, function(err){
+// 	if(err){
+// 		console.error(err);
+// 	}else{
+// 		console.log('success');
+// 	}
+// })
 
 app.use(bodyParser.json());
 app.use(multipartMiddleware);
@@ -51,11 +51,14 @@ app.post('/api/user/login', authenticationController.login);
 app.post('/api/home/post', postController.postQuestion);
 app.get('/api/home/get', postController.getQuestion);
 
-app.get('/api/getQuestion', postController.Question);
+
 
 app.post('/api/post/get', qaController.getPost);
 
-app.post('/api/answer/post', qaController.postAnswer)
+app.post('/api/answer/post', qaController.postAnswer);
+
+
+app.get('/api/answer/displayAnswers', qaController.getPost);
 
 //app.listen('3000', function(){
 //	console.log('Listening in port 3000');
