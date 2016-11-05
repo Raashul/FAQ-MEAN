@@ -8,16 +8,11 @@
       }
 
 
-
-
-
 	  $scope.username=localStorage.getItem('username');
 
 
    $http.post('api/post/get',id).success(function(response){
-        console.log(response);
-        console.log(response.username);
-        console.log(response.answers.answer)
+       
         $scope.post = response;
       }).error(function(err){
         console.log(err);
@@ -49,20 +44,6 @@
 
   }
 
-
-  	// var init = function () {
-			//    $http.get('api/displayAnswers').success(function(response){
-   //    	console.log('inside display answer');
-			// 	$scope.updatedPost = response;
-
-			// 	res.json($scope.updatedPost);
-
-			// 	}).error(function(err){
-			// 	 console.log(err);
-			// });
-			// };
-			// // and fire it after definition
-			// init();
 
 
 

@@ -46,14 +46,6 @@
          $location.path('/post').search({id: request.id});
 
 
-//            $http.get('api/getQuestion',request).success(function(response){
-//                console.log('success');
-//            }).error(function(err){
-//                 console.log('error');
-//            })
-
-
-
 
         }// end of getQuestion method
 
